@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>datascructure2.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+datascructure2.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Write a program that prompts for a file name,</span>
+<span class="s0"># then opens that file and reads through the file,</span>
+<span class="s0"># and print the contents of the file in upper case.</span>
+<span class="s0"># Use the file words.txt to produce the output below.</span>
+<span class="s0"># You can download the sample data at http://www.py4e.com/code3/words.txt</span>
+
+<span class="s0"># Prompting the user for a file name</span>
+<span class="s1">file_name = input(</span><span class="s2">&quot;Enter the file name: &quot;</span><span class="s1">)</span>
+
+<span class="s3">try</span><span class="s1">:</span>
+    <span class="s3">with </span><span class="s1">open(</span><span class="s2">'words.txt'</span><span class="s3">, </span><span class="s2">'r'</span><span class="s1">) </span><span class="s3">as </span><span class="s1">file:</span>
+        <span class="s3">for </span><span class="s1">line </span><span class="s3">in </span><span class="s1">file:</span>
+            <span class="s0"># Using strip() to remove trailing newline characters</span>
+            <span class="s1">clean_line = line.rstrip()</span>
+            <span class="s1">print(clean_line.upper())</span>
+<span class="s3">except </span><span class="s1">FileNotFoundError:</span>
+    <span class="s1">print(</span><span class="s2">&quot;File not found. Please enter a valid file name.&quot;</span><span class="s1">)</span>
+<span class="s3">except </span><span class="s1">Exception </span><span class="s3">as </span><span class="s1">e:</span>
+    <span class="s1">print(</span><span class="s2">&quot;An error occurred:&quot;</span><span class="s3">, </span><span class="s1">e)</span>
+
+
+</pre>
+</body>
+</html>
